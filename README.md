@@ -1,22 +1,64 @@
-# sql-data-analytics-project
-A comprehensive collection of SQL scripts for data exploration, analytics, and reporting. These scripts cover various analyses such as database exploration, measures and metrics, time-based trends, cumulative analytics, segmentation, and more.
-This repository contains SQL queries designed to help data analysts and BI professionals quickly explore, segment, and analyze data within a relational database. Each script focuses on a specific analytical theme and demonstrates best practices for SQL queries.
+# SQL Data Analytics Project
 
----
+A hands-on SQL project covering data exploration, analytics, and reporting — following along with the *Data With Baraa* SQL Data Analytics course, adapted and run on **Fedora Linux** using **Docker + VS Code (SQLTools)** instead of Windows/SSMS.
+
+This repo contains SQL scripts organized by analytical theme: database exploration, measures and metrics, time-based trends, cumulative analytics, segmentation, ranking, and customer/product reporting.
+
+## 🧰 Environment
+
+- **OS:** Fedora Linux
+- **Database:** SQL Server 2022, running in Docker
+- **Editor:** VS Code with the SQLTools extension (SQL Server driver)
+- **Data:** Gold-layer flat files (`dim_customers`, `dim_products`, `fact_sales`)
+
+## 📁 Project Structure
+
+```
+datasets/
+  DataWarehouseAnalytics.bak
+  flat-files/
+    dim_customers.csv
+    dim_products.csv
+    fact_sales.csv
+
+scripts/
+  00_init_database.sql              → create database, schema, and tables
+  01_database_exploration.sql       → explore tables and structure
+  02_dimensions_exploration.sql     → explore dimension tables
+  03_date_range_exploration.sql     → explore date ranges
+  04_measures_exploration.sql       → explore key measures
+  05_magnitude_analysis.sql         → magnitude analysis
+  06_ranking_analysis.sql           → ranking analysis
+  07_change_over_time_analysis.sql  → trends over time
+  08_cumulative_analysis.sql        → running totals and cumulative metrics
+  09_performance_analysis.sql       → performance analysis
+  10_data_segmentation.sql          → data segmentation
+  11_part_to_whole_analysis.sql     → part-to-whole analysis
+  12_report_customers.sql           → customer report
+  13_report_products.sql            → product report
+
+docs/
+  Project_Notes_Sketches.pdf
+  Project Roadmap.pdf
+  Project Roadmap.png
+```
+
+## 🚀 Setup
+
+1. Run SQL Server locally in Docker (see `00_init_database.sql` for schema/table setup).
+2. Copy the `datasets/flat-files/` CSVs into the container.
+3. Run `00_init_database.sql` via `sqlcmd` inside the container to create the database and load the data.
+4. Connect to the database from VS Code using SQLTools, and run the numbered scripts in order to follow the analysis roadmap.
+
+## 📊 What's Covered
+
+- Exploring database structure, dimensions, and date ranges
+- Key business measures and magnitude analysis
+- Ranking and segmentation
+- Time-based trends and cumulative (running total) analysis
+- Performance analysis (year-over-year, prior period comparisons)
+- Customer and product reporting
 
 ## 🛡️ License
 
-This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and share this project with proper attribution.
-
-## 🌟 About Me
-
-Hi there! I'm **Baraa Khatib Salkini**, also known as **Data With Baraa**. I’m an IT professional and passionate YouTuber on a mission to share knowledge and make working with data enjoyable and engaging!
-
-Let's stay in touch! Feel free to connect with me on the following platforms:
-
-[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](http://bit.ly/3GiCVUE)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/baraa-khatib-salkini)
-[![Website](https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.datawithbaraa.com)
-[![Newsletter](https://img.shields.io/badge/Newsletter-FF5722?style=for-the-badge&logo=substack&logoColor=white)](https://bit.ly/BaraaNewsletter)
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/baraasalkini)
-[![Join](https://img.shields.io/badge/Join-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@datawithbaraa)
+Licensed under the [MIT License](LICENSE). Original course materials are the property of Data With Baraa.
